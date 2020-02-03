@@ -48,12 +48,12 @@ public class Livres {
 				public void setTitre(String titre) {
 					this.titre = titre;
 				}
-				@Column(name="auteur")
+				@ManyToOne
+				@JoinColumn(name="id_auteur")
 				public Auteurs getAuteur() {
 					return auteur;
 				}
-				@ManyToOne
-				@JoinColumn(name="id_auteur")
+				
 				public void setAuteur(Auteurs auteur) {
 					this.auteur = auteur;
 				}
