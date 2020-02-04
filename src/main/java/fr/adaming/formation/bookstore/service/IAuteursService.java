@@ -8,9 +8,10 @@ import fr.adaming.formation.bookstore.model.Auteurs;
 public interface IAuteursService {
 	
 	public Auteurs saveAuteur(Auteurs auteur);
-	public void deleteAuteurs(Auteurs auteur);
+	public void deleteAuteurs(long id);
 	public Auteurs getOneAuteurs(long id);
-	public List<Auteurs > findALL(Auteurs auteur);
+	public List<Auteurs > getAll();
+	List<Auteurs> findALL();
 	
 		
 		

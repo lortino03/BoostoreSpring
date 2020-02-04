@@ -26,7 +26,8 @@ public class EtagereService implements IEtagereService {
 	}
 
 	@Override
-	public void deleteEtagere(Etagere etagere) {	
+	public void deleteEtagere(long id) {	
+		etagereRepository.deleteById(id);
 	}
 
 	@Override
@@ -41,7 +42,7 @@ public class EtagereService implements IEtagereService {
 	
 	
 	@Override
-	public List<Etagere> findALL(Etagere etagere) {
+	public List<Etagere> getAll() {
 		
 		return etagereRepository.findAll();
 	}

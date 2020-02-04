@@ -14,29 +14,29 @@ public class LivresService implements ILivresService{
 	@Autowired	                       // laisse a spring de gerer  l'instanciation
 	ILivresRepository livreRepository;
 
-	@Override
+	
 	public Livres saveLivre(Livres livre) {
 		return livreRepository.save(livre);
 	}
 
 	@Override
-	public void deleteLivre(Livres livre) {
+	public void deleteLivre(long id) {
+		livreRepository.deleteById(id);
 	}
 
-	public Livres getOneLivre(Long id) {
+	public Livres getOneLivre(long id) {
 		Optional <Livres> livreOptional=livreRepository.findById(id);
 		Livres livre= new Livres();
 		if (livreOptional.isPresent()) {
 			livre=livreOptional.get();
 		}
 		return livre;
-	}
+	}	
 
-	
-	@Override
-	public List<Livres> findALL(Livres livre) {
-		
+	public List<Livres> getAll() {
 		return livreRepository.findAll();
 	}
 
+
+	
 }

@@ -20,7 +20,8 @@ public class AuteursService implements IAuteursService{
 	}
 
 	@Override
-	public void deleteAuteurs(Auteurs auteur) {
+	public void deleteAuteurs(long id) {
+		auteurRepository.deleteById(id);
 		
 	}
 
@@ -35,8 +36,14 @@ public class AuteursService implements IAuteursService{
 	}
 
 	@Override
-	public List<Auteurs> findALL(Auteurs auteur) {
+	public List<Auteurs> findALL() {
 	
+		return auteurRepository.findAll();
+	}
+
+	@Override
+	public List<Auteurs> getAll() {
+		
 		return auteurRepository.findAll();
 	}
 	

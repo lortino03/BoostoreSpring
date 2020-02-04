@@ -10,7 +10,7 @@ import fr.adaming.formation.bookstore.model.Etagere;
 public interface IEtagereService {
 
 	public Etagere saveEtagere(Etagere etagere);
-	public void deleteEtagere(Etagere etagere);
+	public void deleteEtagere(long id);
 	public Etagere getOneEtagere(long id);
-	public List<Etagere> findALL(Etagere etagere);
+	public List<Etagere> getAll();
 }

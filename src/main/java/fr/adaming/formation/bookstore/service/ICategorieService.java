@@ -10,8 +10,8 @@ import fr.adaming.formation.bookstore.model.Categorie;
 @Service
 public interface ICategorieService {
 	public Categorie saveCategorie(Categorie categorie);
-	public void deleteCategorie(Categorie categorie);
+	public void deleteCategorie(long id);
 	public Categorie getOneCategorie(long id);
-	public List<Categorie > findALL(Categorie categorie);
+	public List<Categorie > getAll();
 
 }

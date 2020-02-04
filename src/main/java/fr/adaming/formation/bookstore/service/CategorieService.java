@@ -23,7 +23,8 @@ public class CategorieService implements ICategorieService{
 	}
 
 	@Override
-	public void deleteCategorie(Categorie categorie) {
+	public void deleteCategorie(long id) {
+		categorieRepository.deleteById(id);
 		
 	}
 
@@ -38,7 +39,7 @@ public class CategorieService implements ICategorieService{
 	}
 
 	@Override
-	public List<Categorie> findALL(Categorie categorie) {
+	public List<Categorie> getAll() {
 		
 		return categorieRepository.findAll();
 	}
