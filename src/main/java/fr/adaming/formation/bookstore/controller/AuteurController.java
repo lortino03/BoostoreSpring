@@ -48,8 +48,13 @@ public class AuteurController {
 	
 
 	@PutMapping
-	public Auteurs updateAuteurs(@RequestBody Auteurs auteur) {
-		return auteursService.saveAuteur(auteur);
+	public Auteurs updateAuteurs(@PathVariable long id,@RequestBody Auteurs auteur) {
+		Auteurs a1=new Auteurs();
+		a1=auteursService.getOneAuteurs(id);
+		a1.setNom(auteur.getNom());
+		a1.setPrenom(auteur.getPrenom());
+		return auteursService.saveAuteur(a1);
+		
 		
 	}
 	

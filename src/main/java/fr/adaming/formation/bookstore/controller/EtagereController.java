@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import fr.adaming.formation.bookstore.model.Categorie;
 import fr.adaming.formation.bookstore.model.Etagere;
 import fr.adaming.formation.bookstore.service.IEtagereService;
 
@@ -49,8 +47,11 @@ public class EtagereController {
 	}
 	
 	@PutMapping
-	public Etagere updateEtagere(@RequestBody Etagere etagere) {
-		return etagereService.saveEtagere(etagere);
+	public Etagere updateEtagere(@PathVariable long id, @RequestBody Etagere etagere) {
+		Etagere e1=new Etagere();
+		e1=etagereService.getOneEtagere(id);
+		e1.setLibelle(etagere.getLibelle());
+		return etagereService.saveEtagere(e1);
 		
 	}
 	

@@ -1,6 +1,7 @@
 package fr.adaming.formation.bookstore;
 
 import java.util.Calendar;
+
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,6 @@ import fr.adaming.formation.bookstore.model.Auteurs;
 import fr.adaming.formation.bookstore.model.Categorie;
 import fr.adaming.formation.bookstore.model.Etagere;
 import fr.adaming.formation.bookstore.model.Livres;
-import fr.adaming.formation.bookstore.service.AuteursService;
 import fr.adaming.formation.bookstore.service.IAuteursService;
 import fr.adaming.formation.bookstore.service.ICategorieService;
 import fr.adaming.formation.bookstore.service.IEtagereService;
@@ -56,6 +56,7 @@ public class BookstoreApplication implements CommandLineRunner {
 		etagereService.saveEtagere(e1);
 
 		Livres l1 = new Livres();
+		l1=livresService.getOneLivre(1);
 		l1.setIdLivre(3);
 		l1.setTitre(" l'autoroute du millionnaire");
 		l1.setISBN("021324456456");

@@ -49,8 +49,11 @@ public class CategorieController {
 	}
 	
 	@PutMapping
-	public Categorie updateCategorie(@RequestBody Categorie categorie) {
-		return categorieService.saveCategorie(categorie);
+	public Categorie updateCategorie(@PathVariable long id,@RequestBody Categorie categorie) {
+		Categorie c1=new Categorie();
+		c1= categorieService.getOneCategorie(id);
+		c1.setLibelle(categorie.getLibelle());
+		return categorieService.saveCategorie(c1);
 		
 	}
 	
