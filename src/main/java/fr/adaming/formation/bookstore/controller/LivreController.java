@@ -40,7 +40,6 @@ public class LivreController {
 	@DeleteMapping("{id}") 
 	public void deleteLivre(@PathVariable long id) {
 		livresService.deleteLivre(id);
-		System.out.println("livre supprimé");
 		
 	}
 

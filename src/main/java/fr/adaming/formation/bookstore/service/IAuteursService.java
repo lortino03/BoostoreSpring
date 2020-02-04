@@ -10,7 +10,7 @@ public interface IAuteursService {
 	public Auteurs saveAuteur(Auteurs auteur);
 	public void deleteAuteurs(long id);
 	public Auteurs getOneAuteurs(long id);
-	public List<Auteurs > getAll();
+	public List<Auteurs> getAll();
 	List<Auteurs> findALL();
 	
 		

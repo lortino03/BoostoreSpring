@@ -18,7 +18,7 @@ import fr.adaming.formation.bookstore.model.Etagere;
 import fr.adaming.formation.bookstore.service.IEtagereService;
 
 @RestController
-@RequestMapping("categorie")
+@RequestMapping("etagere")
 @CrossOrigin("http://localhost:4200")
 public class EtagereController {
 	@Autowired
@@ -30,9 +30,7 @@ public class EtagereController {
 	}
 	
 	@GetMapping("{id}") 					
-
-	public Etagere getOne(@PathVariable long id) { 
-													
+	public Etagere getOne(@PathVariable long id) { 												
 		return etagereService.getOneEtagere(id);
 
 	}

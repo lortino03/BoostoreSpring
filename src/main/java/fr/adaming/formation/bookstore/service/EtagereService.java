@@ -13,8 +13,6 @@ import fr.adaming.formation.bookstore.repository.IEtagereRepository;
 @Service
 public class EtagereService implements IEtagereService {
 
-	
-	
 	@Autowired
 	IEtagereRepository etagereRepository;
 	
@@ -40,10 +38,8 @@ public class EtagereService implements IEtagereService {
 		return etagere;
 	}
 	
-	
 	@Override
-	public List<Etagere> getAll() {
-		
+	public List<Etagere> getAll() {	
 		return etagereRepository.findAll();
 	}
 
