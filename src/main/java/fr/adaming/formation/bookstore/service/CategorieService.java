@@ -15,6 +15,7 @@ public class CategorieService implements ICategorieService{
 	
 	@Autowired
 	ICategorieRepository categorieRepository;
+	
 
 	@Override
 	public Categorie saveCategorie(Categorie categorie) {
@@ -25,6 +26,17 @@ public class CategorieService implements ICategorieService{
 	@Override
 	public void deleteCategorie(long id) {
 		categorieRepository.deleteById(id);
+		
+	}
+
+	@Override
+	public boolean deleteCategorie2(long id) {
+		try {
+			categorieRepository.deleteById(id);
+		} catch (Exception e) {
+			return false;
+		}
+	return true;
 		
 	}
 
@@ -44,4 +56,5 @@ public class CategorieService implements ICategorieService{
 		return categorieRepository.findAll();
 	}
 
+	
 }

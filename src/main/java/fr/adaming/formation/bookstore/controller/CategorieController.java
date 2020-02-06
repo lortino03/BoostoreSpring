@@ -37,10 +37,9 @@ public class CategorieController {
 	
 	@DeleteMapping("{id}") 
 	public void deleteCategorie(@PathVariable long id) {
-		categorieService.deleteCategorie(id);
-		
-		
+		categorieService.deleteCategorie(id);	
 	}
+
 
 	@PostMapping
 	public Categorie saveCategorie(@RequestBody Categorie categorie) {
@@ -48,7 +47,7 @@ public class CategorieController {
 		
 	}
 	
-	@PutMapping
+	@PutMapping("{id}") 
 	public Categorie updateCategorie(@PathVariable long id,@RequestBody Categorie categorie) {
 		Categorie c1=new Categorie();
 		c1= categorieService.getOneCategorie(id);

@@ -46,7 +46,7 @@ public class EtagereController {
 		
 	}
 	
-	@PutMapping
+	@PutMapping("{id}") 
 	public Etagere updateEtagere(@PathVariable long id, @RequestBody Etagere etagere) {
 		Etagere e1=new Etagere();
 		e1=etagereService.getOneEtagere(id);

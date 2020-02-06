@@ -29,6 +29,16 @@ public class EtagereService implements IEtagereService {
 	}
 
 	@Override
+	public boolean deleteEtagere2(long id) {	
+		try {
+			etagereRepository.deleteById(id);
+		} catch (Exception e) {
+	return false;
+		}
+	return true;
+	}
+
+	@Override
 	public Etagere getOneEtagere(long id) {
 		Optional<Etagere>etagereOptional=etagereRepository.findById(id);
 		Etagere etagere=new Etagere();

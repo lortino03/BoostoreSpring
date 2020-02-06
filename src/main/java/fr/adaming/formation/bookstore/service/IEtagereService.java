@@ -11,6 +11,7 @@ public interface IEtagereService {
 
 	public Etagere saveEtagere(Etagere etagere);
 	public void deleteEtagere(long id);
+	public boolean deleteEtagere2(long id);
 	public Etagere getOneEtagere(long id);
 	public List<Etagere> getAll();
 }

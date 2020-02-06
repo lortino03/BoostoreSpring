@@ -46,7 +46,17 @@ public class AuteursService implements IAuteursService{
 		
 		return auteurRepository.findAll();
 	}
-	
+
+	@Override
+	public boolean deleteAuteurs1(long id) {
+		try {
+			auteurRepository.deleteById(id);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+
 	
 	
 

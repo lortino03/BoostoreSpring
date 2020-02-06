@@ -36,9 +36,19 @@ public class AuteurController {
 
 	}
 	
+//	@DeleteMapping("{id}") 
+//	public void deleteAuteurs(@PathVariable long id) {
+//		auteursService.deleteAuteurs(id);
+//	}
+//	
 	@DeleteMapping("{id}") 
-	public void deleteAuteurs(@PathVariable long id) {
-		auteursService.deleteAuteurs(id);
+	public boolean deleteAuteurs2(@PathVariable long id) {
+		try {
+			auteursService.deleteAuteurs(id);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
 	}
 	
 	@PostMapping
@@ -47,7 +57,7 @@ public class AuteurController {
 		}
 	
 
-	@PutMapping
+	@PutMapping("{id}") 
 	public Auteurs updateAuteurs(@PathVariable long id,@RequestBody Auteurs auteur) {
 		Auteurs a1=new Auteurs();
 		a1=auteursService.getOneAuteurs(id);

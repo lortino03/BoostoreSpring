@@ -36,12 +36,26 @@ public class LivreController {
 		return livresService.getOneLivre(id);
 
 	}
+	@GetMapping("byauteur/{idAuteur}")
+	public List<Livres>findByAuteur(@PathVariable long idAuteur){
+		return livresService.findByAuteur(idAuteur);	
+	}
+	@GetMapping("byEtagere/{idEtagere}")
+	public List<Livres>findByEtagere(@PathVariable long idEtagere){
+		return livresService.findByEtagere(idEtagere);
+	}
 	
+	@GetMapping("byCategorie/{idCategorie}")
+	public List<Livres>findByCategorie(@PathVariable long idCategorie){
+		return livresService.findByCategorie(idCategorie);		
+	}
 	@DeleteMapping("{id}") 
 	public void deleteLivre(@PathVariable long id) {
 		livresService.deleteLivre(id);
+		System.out.println("livre supprimé");
 		
 	}
+	
 
 	@PostMapping
 	public Livres saveLivres(@RequestBody Livres livre) {

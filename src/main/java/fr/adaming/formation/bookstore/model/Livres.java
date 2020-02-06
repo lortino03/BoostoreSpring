@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
 @Table(name="tb_livre")
 public class Livres {
@@ -58,6 +60,7 @@ public class Livres {
 					this.auteur = auteur;
 				}
 				@Column(name="date")
+				@JsonFormat(pattern = "yyyy-MM-dd")
 				public Date getDateDeParution() {
 					return dateDeParution;
 				}

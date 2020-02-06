@@ -65,7 +65,7 @@ public class BookstoreApplication implements CommandLineRunner {
 		l1.setEtagere(e1);
 		l1.setDateDeParution(datesql);
 
-		livresService.saveLivre(l1);
+//		livresService.saveLivre(l1);
 
 		System.err.println("bouyachaka");
 
