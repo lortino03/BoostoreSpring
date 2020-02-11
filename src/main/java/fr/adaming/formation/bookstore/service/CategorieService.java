@@ -1,13 +1,13 @@
 package fr.adaming.formation.bookstore.service;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.adaming.formation.bookstore.model.Categorie;
-import fr.adaming.formation.bookstore.model.Livres;
 import fr.adaming.formation.bookstore.repository.ICategorieRepository;
 
 @Service

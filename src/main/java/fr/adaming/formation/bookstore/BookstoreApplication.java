@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import fr.adaming.formation.bookstore.model.Auteurs;
 import fr.adaming.formation.bookstore.model.Categorie;
 import fr.adaming.formation.bookstore.model.Etagere;
@@ -16,9 +19,15 @@ import fr.adaming.formation.bookstore.service.IAuteursService;
 import fr.adaming.formation.bookstore.service.ICategorieService;
 import fr.adaming.formation.bookstore.service.IEtagereService;
 import fr.adaming.formation.bookstore.service.ILivresService;
+import fr.adaming.formation.bookstore.service.IUtilisateursService;
 
 @SpringBootApplication
 public class BookstoreApplication implements CommandLineRunner {
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+	
 	@Autowired
 	ILivresService livresService;
 	@Autowired
@@ -27,6 +36,9 @@ public class BookstoreApplication implements CommandLineRunner {
 	ICategorieService categorieService;
 	@Autowired
 	IEtagereService etagereService;
+	@Autowired
+	IUtilisateursService utilisateursService;
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookstoreApplication.class, args);

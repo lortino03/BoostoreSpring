@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import fr.adaming.formation.bookstore.model.Auteurs;
 import fr.adaming.formation.bookstore.model.Etagere;
 import fr.adaming.formation.bookstore.repository.IEtagereRepository;
 

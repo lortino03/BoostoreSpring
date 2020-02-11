@@ -29,6 +29,7 @@ public class LivreController {
 		return livresService.getAll();
 	}
 
+	 // WEBSERVICE  AFFICHER UTILISATEURS
 	@GetMapping("{id}") 							// pour un getOne , On a besoin d'un id, le id ici est ceci correspond a ce que nous faisions dans postman /:
 
 	public Livres getOne(@PathVariable long id) { // pour dire que c'est un parametre a prendre de l'url, pour recuperer du corps on mettra @requestBody
@@ -36,20 +37,23 @@ public class LivreController {
 		return livresService.getOneLivre(id);
 
 	}
-	@GetMapping("byauteur/{idAuteur}")
+	@GetMapping("byauteur/{idAuteur}")  // WEBSERVICE AFFICHER PAR AUTEUR
+	
 	public List<Livres>findByAuteur(@PathVariable long idAuteur){
 		return livresService.findByAuteur(idAuteur);	
 	}
-	@GetMapping("byEtagere/{idEtagere}")
+	
+	@GetMapping("byEtagere/{idEtagere}")  // WEBSERVICE AFFICHER PAR ETAGERE
 	public List<Livres>findByEtagere(@PathVariable long idEtagere){
 		return livresService.findByEtagere(idEtagere);
 	}
 	
-	@GetMapping("byCategorie/{idCategorie}")
+	@GetMapping("byCategorie/{idCategorie}") // WEBSERVICE AFFICHER PAR CATEGORIE
 	public List<Livres>findByCategorie(@PathVariable long idCategorie){
 		return livresService.findByCategorie(idCategorie);		
 	}
-	@DeleteMapping("{id}") 
+	
+	@DeleteMapping("{id}")  // WEBSERVICE SUPPRIMER LIVRES
 	public void deleteLivre(@PathVariable long id) {
 		livresService.deleteLivre(id);
 		System.out.println("livre supprimé");
