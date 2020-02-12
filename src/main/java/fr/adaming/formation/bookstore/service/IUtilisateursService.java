@@ -14,7 +14,7 @@ public interface IUtilisateursService {
 	public void deleteUtilisateurs(long id);
 	public boolean deleteUtilisateur(long id);
 	public List<Utilisateurs> getAll();
-	public Utilisateurs FindByLoginAndPwd(String login,String pwd);
-	public boolean FindByLogin(Utilisateurs utilisateurs);
-
+	public Utilisateurs findByLoginAndPwd(String login,String pwd);
+	public boolean findByLogin1(Utilisateurs utilisateurs);
+	public Utilisateurs findByLogin(Utilisateurs utilisateurs);
 }

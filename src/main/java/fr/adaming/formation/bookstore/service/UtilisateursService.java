@@ -56,7 +56,7 @@ public class UtilisateursService implements IUtilisateursService {
 	}
 
 	@Override
-	public Utilisateurs FindByLoginAndPwd(String login,String pwd) {
+	public Utilisateurs findByLoginAndPwd(String login,String pwd) {
 		Utilisateurs utilisateur =new Utilisateurs();
 		utilisateur= utilisateursRepository.findByLoginAndPwd(login, pwd);
 		if(utilisateur !=null) {
@@ -67,12 +67,21 @@ public class UtilisateursService implements IUtilisateursService {
 	}
 
 	@Override
-	public boolean FindByLogin(Utilisateurs utilisateurs) {
+	public boolean findByLogin1(Utilisateurs utilisateurs) {
 		Utilisateurs usercripte= utilisateursRepository.findByLogin(utilisateurs .getLogin());
 		if(usercripte==null) 
 			return false;
 		if (bCryptPasswordEncoder.matches(utilisateurs.getPwd(),usercripte.getPwd()));
 		return true;
+	}
+
+	@Override
+	public Utilisateurs findByLogin(Utilisateurs utilisateurs) {
+		Utilisateurs usercripte= utilisateursRepository.findByLogin(utilisateurs .getLogin());
+		if(usercripte==null) 
+			return null;
+		if (bCryptPasswordEncoder.matches(utilisateurs.getPwd(),usercripte.getPwd()));
+		return utilisateurs;
 	}
  
 
