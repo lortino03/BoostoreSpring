@@ -59,7 +59,6 @@ public class UtilisateursController {
 	public Utilisateurs saveUtilisateurs(@RequestBody Utilisateurs utilisateurs) {
 		utilisateurs.setPwd(bCryptPasswordEncoder.encode(utilisateurs.getPwd()));
 		return utilisateursService.saveUtilisateurs(utilisateurs);
-
 	}
 
 	@PutMapping("{id}") // WEBSERVICE MODIFIER UTILISATEURS

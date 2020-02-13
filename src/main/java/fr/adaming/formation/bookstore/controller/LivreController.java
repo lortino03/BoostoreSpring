@@ -61,9 +61,16 @@ public class LivreController {
 	}
 	
 
-	@PostMapping
+	@PostMapping			// WEBSERVICE POUR AJOUTER DES LIVRES
 	public Livres saveLivres(@RequestBody Livres livre) {
-		return livresService.saveLivre(livre);
+		Livres l1 = new Livres();
+		l1.setTitre(livre.getTitre());
+		l1.setISBN(livre.getISBN());
+		l1.setAuteur(livre.getAuteur());
+		l1.setCategorie(livre.getCategorie());
+		l1.setEtagere(livre.getEtagere());
+		l1.setDateDeParution(livre.getDateDeParution());
+		return livresService.saveLivre(l1);
 		
 	}
 	
